@@ -1,0 +1,55 @@
+# --- Version control ---
+.git/
+.gitignore
+
+# --- IDE/editor files ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Java build artifacts ---
+target/
+*.class
+
+# --- Node.js build artifacts ---
+node_modules/
+npm-debug.log
+yarn-debug.log
+
+# --- Common build outputs ---
+dist/
+build/
+out/
+
+# --- Test and debug artifacts ---
+coverage/
+*.log
+debug/
+
+# --- Temporary and local files ---
+tmp/
+temp/
+*.tmp
+.local/
+local/
+
+# --- Environment and secrets ---
+.env*
+*.env
+*.pem
+*.key
+*.crt
+config.local.*
+*.local.yml
+
+# --- Docker files (if not needed in build context) ---
+Dockerfile*
+docker-compose*
+
+# --- Miscellaneous ---
+.svn/
+.hg/
+
+# --- Project-specific ---
+# (No exclusions for .mvn, .mvnw, .gradle, .gradlew, or lock files as per instructions)
