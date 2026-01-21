@@ -59,7 +59,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .oauth2Login(oauth -> oauth
-                        .defaultSuccessUrl("http://localhost:8080/auth/oauth-success", true)
+                        .defaultSuccessUrl("http://192.168.49.2:30010/auth/oauth-success", true)
                         .failureUrl("http://localhost:3000/login?error=oauth_failed")
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
