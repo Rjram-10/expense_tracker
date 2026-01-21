@@ -40,7 +40,7 @@ public class AuthController {
     public void oauthSuccess(OAuth2AuthenticationToken token, jakarta.servlet.http.HttpServletResponse response) throws java.io.IOException {
         try {
             if (token == null || token.getPrincipal() == null) {
-                response.sendRedirect("http://localhost:3000/login?error=oauth_failed");
+                response.sendRedirect("http://192.168.49.2:30060/login?error=oauth_failed");
                 return;
             }
             
@@ -63,11 +63,11 @@ public class AuthController {
             }
             
             String jwt = authUtil.genrateAccessToken(user);
-            String redirectUrl = String.format("http://localhost:3000/auth/callback?token=%s&userId=%s", 
+            String redirectUrl = String.format("http://192.168.49.2:30060/auth/callback?token=%s&userId=%s", 
                     jwt, user.getUserId());
             response.sendRedirect(redirectUrl);
         } catch (Exception e) {
-            response.sendRedirect("http://localhost:3000/login?error=oauth_failed");
+            response.sendRedirect("http://192.168.49.2:30060/login?error=oauth_failed");
         }
     }
     
