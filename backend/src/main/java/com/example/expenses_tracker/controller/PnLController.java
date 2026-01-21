@@ -12,7 +12,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/pnl")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://192.168.49.2:30060")
 public class PnLController {
     private final IncomeService incomeService;
     private final ExpenseService expenseService;
