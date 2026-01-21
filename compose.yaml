@@ -3,7 +3,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: java-backend:dev
+    image: rjram/expense-backend:latest
     container_name: java-backend
     restart: unless-stopped
     init: true
@@ -16,7 +16,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: js-frontend:dev
+    image: rjram/expense-frontend:latest
     container_name: js-frontend
     restart: unless-stopped
     init: true
