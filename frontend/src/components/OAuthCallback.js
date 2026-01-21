@@ -27,7 +27,7 @@ const OAuthCallback = () => {
 
   const fetchOAuthUser = async () => {
     try {
-      const response = await fetch('http://localhost:8080/auth/oauth-user', {
+      const response = await fetch('http://192.168.49.2:30010/auth/oauth-user', {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
