@@ -26,7 +26,7 @@ const Login = () => {
 
   const fetchOAuthUser = async () => {
     try {
-      const response = await fetch('http://localhost:8080/auth/oauth-user', {
+      const response = await fetch('http://192.168.49.2:30010/auth/oauth-user', {
         credentials: 'include',
       });
       if (response.ok) {
@@ -102,7 +102,7 @@ const Login = () => {
         </div>
         
         <a 
-          href="http://localhost:8080/oauth2/authorization/google" 
+          href="http://192.168.49.2:30010/oauth2/authorization/google" 
           className="btn-google"
         >
           <svg className="google-icon" viewBox="0 0 24 24">
