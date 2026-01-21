@@ -34,7 +34,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+        configuration.setAllowedOrigins(Arrays.asList("http://192.168.49.2:30060"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
@@ -60,7 +60,7 @@ public class SecurityConfig {
                 )
                 .oauth2Login(oauth -> oauth
                         .defaultSuccessUrl("http://192.168.49.2:30010/auth/oauth-success", true)
-                        .failureUrl("http://localhost:3000/login?error=oauth_failed")
+                        .failureUrl("http://192.168.49.2:30060/login?error=oauth_failed")
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
