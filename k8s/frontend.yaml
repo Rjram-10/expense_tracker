@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: js-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: js-frontend
+  template:
+    metadata:
+      labels:
+        app: js-frontend
+    spec:
+      containers:
+        - name: js-frontend
+          image: rjram/expense-part2-frontend:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: API_BASE_URL
+              value: "/api"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: js-frontend
+spec:
+  type: NodePort
+  selector:
+    app: js-frontend
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30010
+      protocol: TCP
